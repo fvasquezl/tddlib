@@ -1,0 +1,10 @@
+created:
+    - database/factories/PostFactory.php
+    - database/factories/CategoryFactory.php
+    - database/migrations/2020_10_29_221839_create_posts_table.php
+    - database/migrations/2020_10_29_221840_create_categories_table.php
+    - app/Models/Post.php
+    - app/Models/Category.php
+models:
+    Post: { title: 'string:400', slug: 'string unique', excerpt: mediumtext, published_at: 'nullable timestamp', category_id: id, user_id: id }
+    Category: { name: string, slug: 'string unique', relationships: { hasMany: Post } }
