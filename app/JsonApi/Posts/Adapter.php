@@ -15,7 +15,10 @@ class Adapter extends AbstractAdapter
      *
      * @var array
      */
-    protected $attributes = [];
+    protected $attributes = [
+        'users' =>'user',
+        'categories' => 'category'
+    ];
 
     /**
      * Mapping of JSON API filter names to model scopes.
@@ -42,6 +45,23 @@ class Adapter extends AbstractAdapter
     protected function filter($query, Collection $filters)
     {
         $this->filterWithScopes($query, $filters);
+    }
+
+    protected function fillAttributes($post, Collection $attributes)
+    {
+
+        $post->fill($attributes->toArray());
+        $post->user_id = auth()->id();
+    }
+
+    public function users()
+    {
+        return $this->belongsTo('user');
+    }
+
+    public function categories()
+    {
+        return $this->belongsTo('category');
     }
 
 }

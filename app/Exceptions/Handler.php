@@ -44,8 +44,6 @@ class Handler extends ExceptionHandler
         if ($this->isJsonApi($request, $e)) {
             return $this->renderJsonApi($request, $e);
         }
-
-        // do standard exception rendering here...
     }
 
     protected function prepareException(Throwable $e)
