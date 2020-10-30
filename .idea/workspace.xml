@@ -127,6 +127,13 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/vendor/laravel-shift/blueprint" />
       <path value="$PROJECT_DIR$/vendor/laravel-shift/faker-registry" />
+      <path value="$PROJECT_DIR$/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/vendor/cloudcreativity/laravel-json-api" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/neomerx/json-api" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/vendor/cloudcreativity/json-api-testing" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jZQHuGO8kyivZ21dX3e6geiinM" />
@@ -141,9 +148,13 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="PHPUnit.ListPostsTest.can_list_posts">
+  <component name="RunManager" selected="PHPUnit.ListPostsTest.can_fetch_single_posts">
     <configuration name="CreatePostsTest.testExample" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\Posts\CreatePostsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/CreatePostsTest.php" method="testExample" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ListPostsTest.can_fetch_single_posts" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Posts\ListPostsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/ListPostsTest.php" method="can_fetch_single_posts" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="ListPostsTest.can_list_posts" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -156,6 +167,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.ListPostsTest.can_fetch_single_posts" />
         <item itemvalue="PHPUnit.ListPostsTest.can_list_posts" />
         <item itemvalue="PHPUnit.CreatePostsTest.testExample" />
       </list>
@@ -169,7 +181,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604009051184</updated>
-      <workItem from="1604009052572" duration="5795000" />
+      <workItem from="1604009052572" duration="14806000" />
     </task>
     <servers />
   </component>
@@ -181,22 +193,26 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2532" y="89" width="690" height="897" key="#PHP/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604010916041" />
-    <state width="1872" height="276" key="GridCell.Tab.0.bottom" timestamp="1604014811108">
+    <state x="2020" y="100" width="1720" height="880" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1604095001622">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1872" height="276" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604014811108" />
-    <state width="1872" height="276" key="GridCell.Tab.0.center" timestamp="1604014811108">
+    <state x="2020" y="100" width="1720" height="880" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604095001622" />
+    <state width="1872" height="2" key="GridCell.Tab.0.bottom" timestamp="1604095427180">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1872" height="276" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604014811108" />
-    <state width="1872" height="276" key="GridCell.Tab.0.left" timestamp="1604014811108">
+    <state width="1872" height="2" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604095427180" />
+    <state width="1872" height="2" key="GridCell.Tab.0.center" timestamp="1604095427180">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1872" height="276" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604014811108" />
-    <state width="1872" height="276" key="GridCell.Tab.0.right" timestamp="1604014811108">
+    <state width="1872" height="2" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604095427180" />
+    <state width="1872" height="2" key="GridCell.Tab.0.left" timestamp="1604095427180">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1872" height="276" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604014811108" />
+    <state width="1872" height="2" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604095427180" />
+    <state width="1872" height="2" key="GridCell.Tab.0.right" timestamp="1604095427180">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1872" height="2" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604095427180" />
     <state width="1872" height="341" key="GridCell.Tab.1.bottom" timestamp="1604014580789">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -213,9 +229,9 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1872" height="341" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604014580788" />
-    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1604013283873">
+    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1604090948615">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604013283873" />
+    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604090948615" />
   </component>
 </project>

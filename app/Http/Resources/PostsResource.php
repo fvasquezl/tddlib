@@ -21,8 +21,10 @@ class PostsResource extends JsonResource
             'attributes' => [
                 'title' => $this->resource->title,
                 'slug' => $this->resource->slug,
-//                'excerpt' => $this->resource->excerpt,
-//                'published_at' => $this->published_at,
+                'excerpt' => $this->resource->excerpt,
+            ],
+            'links' => [
+                'self' => route('api.v1.articles.read',$this->resource)
             ]
         ];
     }
