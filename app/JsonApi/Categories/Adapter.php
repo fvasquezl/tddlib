@@ -1,6 +1,6 @@
 <?php
 
-namespace App\JsonApi\Posts;
+namespace App\JsonApi\Categories;
 
 use CloudCreativity\LaravelJsonApi\Eloquent\AbstractAdapter;
 use CloudCreativity\LaravelJsonApi\Pagination\StandardStrategy;
@@ -9,17 +9,13 @@ use Illuminate\Support\Collection;
 
 class Adapter extends AbstractAdapter
 {
-    protected $guarded=['id'];
 
     /**
      * Mapping of JSON API attribute field names to model keys.
      *
      * @var array
      */
-    protected $attributes = [
-        'users' =>'user',
-        'categories' => 'category'
-    ];
+    protected $attributes = [];
 
     /**
      * Mapping of JSON API filter names to model scopes.
@@ -35,7 +31,7 @@ class Adapter extends AbstractAdapter
      */
     public function __construct(StandardStrategy $paging)
     {
-        parent::__construct(new \App\Models\Post(), $paging);
+        parent::__construct(new \App\Models\Category(), $paging);
     }
 
     /**
@@ -46,23 +42,6 @@ class Adapter extends AbstractAdapter
     protected function filter($query, Collection $filters)
     {
         $this->filterWithScopes($query, $filters);
-    }
-
-    protected function fillAttributes($post, Collection $attributes)
-    {
-
-        $post->fill($attributes->toArray());
-        $post->user_id = auth()->id();
-    }
-
-    public function users()
-    {
-        return $this->belongsTo('user');
-    }
-
-    public function categories()
-    {
-        return $this->belongsTo('category');
     }
 
 }

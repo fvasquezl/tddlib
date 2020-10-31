@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 use CloudCreativity\LaravelJsonApi\Resolver\ResolverFactory;
 
 return [
@@ -70,6 +72,8 @@ return [
     */
     'resources' => [
         'posts' => Post::class,
+        'categories'=> Category::class,
+        'users' => User::class
     ],
 
     /*

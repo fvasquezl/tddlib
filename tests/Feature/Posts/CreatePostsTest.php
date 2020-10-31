@@ -17,25 +17,26 @@ class CreatePostsTest extends TestCase
     public function register_user_can_create_a_post()
     {
         $user = User::factory()->create();
-        $category = Category::factory()->create();
-        dd($category);
+        $category = Category::factory()->create();;
 
-        $post = array_filter(Post::factory()->raw());
+        $post = array_filter(Post::factory()->raw([
+            'published_at'=>now()
+        ]));
 
         Sanctum::actingAs($user);
 
         $this->jsonApi()->withData([
             'type' => 'posts',
             'attributes' => $post,
-            'relationships' => [
-                'categories' => [
-                    'data' => [
-                        'id' =>$category->getRouteKey(),
-                        'type' => 'categories'
-                    ]
-                ]
-            ]
-        ])->post(route('api.v1.posts.create'))->dump()
+//           'relationships' => [
+//                'categories' => [
+//                    'data' => [
+//                        'id' =>$category->getRouteKey(),
+//                        'type' => 'categories'
+//                    ]
+//                ]
+//           ]
+        ])->post(route('api.v1.posts.create'))
             ->assertCreated();
 
         $this->assertDatabaseHas('posts',[
