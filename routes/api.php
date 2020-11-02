@@ -4,7 +4,8 @@ use CloudCreativity\LaravelJsonApi\Facades\JsonApi;
 
 
 JsonApi::register('v1')->routes(function ($api) {
-    $api->resource('posts')->relationships(function ($api){;
+    $api->resource('posts')->relationships(function ($api){
+        $api->hasOne('authors')->except('replace');
         $api->hasOne('categories')->except('replace');
     });
 

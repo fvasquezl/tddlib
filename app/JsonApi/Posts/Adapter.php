@@ -2,6 +2,7 @@
 
 namespace App\JsonApi\Posts;
 
+use App\Models\Post;
 use CloudCreativity\LaravelJsonApi\Eloquent\AbstractAdapter;
 use CloudCreativity\LaravelJsonApi\Pagination\StandardStrategy;
 use Illuminate\Database\Eloquent\Builder;
@@ -37,7 +38,7 @@ class Adapter extends AbstractAdapter
      */
     public function __construct(StandardStrategy $paging)
     {
-        parent::__construct(new \App\Models\Post(), $paging);
+        parent::__construct(new Post(), $paging);
     }
 
     /**
@@ -52,7 +53,6 @@ class Adapter extends AbstractAdapter
 
     protected function fillAttributes($post, Collection $attributes)
     {
-
         $post->fill($attributes->toArray());
         $post->user_id = auth()->id();
     }

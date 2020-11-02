@@ -14,6 +14,23 @@ class CreatePostsTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
+    public function guest_user_cannot_create_a_post()
+    {
+        $post = array_filter(Post::factory()->raw([
+            'user_id'=>null,
+        ]));
+
+        $this->jsonApi()->withData([
+            'type' => 'posts',
+            'attributes' => $post,
+        ])->post(route('api.v1.posts.create'))
+            ->assertStatus(401); //Not authorized
+
+        $this->assertDatabaseMissing('posts', $post);
+
+    }
+
+    /** @test */
     public function register_user_can_create_a_post()
     {
         $user = User::factory()->create();
