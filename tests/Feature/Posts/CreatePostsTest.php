@@ -126,4 +126,95 @@ class CreatePostsTest extends TestCase
         $this->assertDatabaseMissing('posts', $post);
     }
 
+    /**  @test */
+    public function slug_must_be_unique()
+    {
+        Post::factory()->create(['slug' => 'same-slug']);
+        $post = Post::factory()->raw(['slug' => 'same-slug']);
+        Sanctum::actingAs(User::factory()->create());
+        $this->jsonApi()->withData([
+            'type' => 'posts',
+            'attributes' => $post
+        ])->post(route('api.v1.posts.create'))
+            ->assertStatus(422)
+            ->assertSee('data\/attributes\/slug');
+
+        $this->assertDatabaseMissing('posts', $post);
+    }
+
+
+    /**  @test */
+    public function slug_must_only_contains_letters_numbers_and_dashes()
+    {
+        $post = Post::factory()->raw(['slug' => '^$%^#']);
+
+        Sanctum::actingAs(User::factory()->create());
+
+        $this->jsonApi()->withData([
+            'type' => 'posts',
+            'attributes' => $post
+        ])->post(route('api.v1.posts.create'))
+            ->assertStatus(422)
+            ->assertSee('data\/attributes\/slug');
+
+        $this->assertDatabaseMissing('posts', $post);
+    }
+
+    /**  @test */
+    public function slug_must_not_contains_underscores()
+    {
+
+        $post = Post::factory()->raw(['slug' => 'with_underscores']);
+
+        Sanctum::actingAs(User::factory()->create());
+
+        $this->jsonApi()->withData([
+            'type' => 'posts',
+            'attributes' => $post
+        ])->post(route('api.v1.posts.create'))
+            ->assertStatus(422)
+            ->assertSee(trans('validation.no_underscores',['attribute'=> 'slug']))
+            ->assertSee('data\/attributes\/slug');
+
+        $this->assertDatabaseMissing('posts', $post);
+    }
+
+    /**  @test */
+    public function slug_must_not_start_with_dashes()
+    {
+
+        $post = Post::factory()->raw(['slug' => '-start-with-dash']);
+
+        Sanctum::actingAs(User::factory()->create());
+
+        $this->jsonApi()->withData([
+            'type' => 'posts',
+            'attributes' => $post
+        ])->post(route('api.v1.posts.create'))
+            ->assertStatus(422)
+            ->assertSee(trans('validation.no_starting_dashes',['attribute'=> 'slug']))
+            ->assertSee('data\/attributes\/slug');
+
+        $this->assertDatabaseMissing('posts', $post);
+    }
+
+    /**  @test */
+    public function slug_must_not_end_with_dashes()
+    {
+
+        $post = Post::factory()->raw(['slug' => 'end-with-dash-']);
+
+        Sanctum::actingAs(User::factory()->create());
+
+        $this->jsonApi()->withData([
+            'type' => 'posts',
+            'attributes' => $post
+        ])->post(route('api.v1.posts.create'))
+            ->assertStatus(422)
+            ->assertSee(trans('validation.no_ending_dashes',['attribute'=> 'slug']))
+            ->assertSee('data\/attributes\/slug');
+
+        $this->assertDatabaseMissing('posts', $post);
+    }
+
 }

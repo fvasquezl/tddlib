@@ -2,6 +2,7 @@
 
 namespace App\JsonApi\Posts;
 
+use App\Rules\Slug;
 use CloudCreativity\LaravelJsonApi\Rules\HasOne;
 use CloudCreativity\LaravelJsonApi\Validation\AbstractValidators;
 use Illuminate\Validation\Rule;
@@ -47,7 +48,12 @@ class Validators extends AbstractValidators
 
         return [
             'title' => ['required'],
-            'slug' => ['required'],
+            'slug' => [
+                'required',
+                'alpha_dash',
+                New Slug(),
+                 Rule::unique('posts')->ignore($record)
+            ],
             'excerpt' => ['required'],
             'published_at' => ['required'],
             'categories' => [
