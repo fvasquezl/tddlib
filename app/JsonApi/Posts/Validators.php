@@ -50,10 +50,10 @@ class Validators extends AbstractValidators
             'slug' => ['required'],
             'excerpt' => ['required'],
             'published_at' => ['required'],
-//            'categories' => [
-//                Rule::requiredIf(! $record),
-//                new HasOne('categories')
-//            ]
+            'categories' => [
+                Rule::requiredIf(! $record),
+                new HasOne('categories')
+            ]
         ];
     }
 

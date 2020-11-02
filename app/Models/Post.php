@@ -24,8 +24,13 @@ class Post extends Model
     protected $casts = [
         'id' => 'integer',
         'category_id' => 'integer',
-        'user_id' => 'integer',
+        'user_id' => 'string',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     /**
      * The attributes that should be mutated to dates.

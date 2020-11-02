@@ -20,7 +20,8 @@ class CreatePostsTest extends TestCase
         $category = Category::factory()->create();;
 
         $post = array_filter(Post::factory()->raw([
-            'published_at'=>now()
+            'category_id'=>null,
+            'published_at' => now()
         ]));
 
         Sanctum::actingAs($user);
@@ -28,18 +29,18 @@ class CreatePostsTest extends TestCase
         $this->jsonApi()->withData([
             'type' => 'posts',
             'attributes' => $post,
-//           'relationships' => [
-//                'categories' => [
-//                    'data' => [
-//                        'id' =>$category->getRouteKey(),
-//                        'type' => 'categories'
-//                    ]
-//                ]
-//           ]
+            'relationships' => [
+                'categories' => [
+                    'data' => [
+                        'id' => $category->getRouteKey(),
+                        'type' => 'categories'
+                    ]
+                ]
+            ]
         ])->post(route('api.v1.posts.create'))
             ->assertCreated();
 
-        $this->assertDatabaseHas('posts',[
+        $this->assertDatabaseHas('posts', [
             'user_id' => $user->id,
             'title' => $post['title'],
             'slug' => $post['slug'],
@@ -47,4 +48,19 @@ class CreatePostsTest extends TestCase
         ]);
 
     }
+
+    /**  @test */
+    public function categories_is_required()
+    {
+        $post = Post::factory()->raw(['category_id' => null]);
+        Sanctum::actingAs(User::factory()->create());
+        $this->jsonApi()->withData([
+            'type' => 'posts',//
+            'attributes' => $post
+        ])->post(route('api.v1.posts.create'))
+            ->assertStatus(422)
+            ->assertJsonFragment(['source' => ['pointer' => '/data']]);
+        $this->assertDatabaseMissing('posts', $post);
+    }
+
 }

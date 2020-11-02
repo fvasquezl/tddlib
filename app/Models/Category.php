@@ -24,10 +24,15 @@ class Category extends Model
     protected $casts = [
         'id' => 'integer',
     ];
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
 
 
     public function posts()
     {
-        return $this->hasMany(\App\Models\Post::class);
+        return $this->hasMany(Post::class);
     }
 }

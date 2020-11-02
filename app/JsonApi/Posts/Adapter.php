@@ -11,15 +11,17 @@ class Adapter extends AbstractAdapter
 {
     protected $guarded=['id'];
 
+    protected $includePaths =[
+        'authors' =>'user',
+        'categories' => 'category'
+    ];
+
     /**
      * Mapping of JSON API attribute field names to model keys.
      *
      * @var array
      */
-    protected $attributes = [
-        'users' =>'user',
-        'categories' => 'category'
-    ];
+    protected $attributes = [];
 
     /**
      * Mapping of JSON API filter names to model scopes.
