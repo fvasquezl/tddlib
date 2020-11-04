@@ -71,7 +71,7 @@ class Authorizer extends AbstractAuthorizer
      */
     public function update($record, $request)
     {
-        // TODO: Implement update() method.
+        $this->authenticate();
     }
 
     /**

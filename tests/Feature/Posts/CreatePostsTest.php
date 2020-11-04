@@ -159,7 +159,6 @@ class CreatePostsTest extends TestCase
         $this->assertDatabaseMissing('posts', $post);
     }
 
-
     /**  @test */
     public function slug_must_only_contains_letters_numbers_and_dashes()
     {

@@ -8,15 +8,6 @@ class Slug implements Rule
 {
     protected $message;
 
-    /**
-     * Create a new rule instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
 
     /**
      * Determine if the validation rule passes.
