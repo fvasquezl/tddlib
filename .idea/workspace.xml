@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="447ca9a9-08b2-4433-a631-58ff246f0ce3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Models/Traits/HasUuid.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/JsonApi/Posts/Adapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/JsonApi/Posts/Adapter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/JsonApi/Posts/Schema.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/JsonApi/Posts/Schema.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/JsonApi/Posts/Authorizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/JsonApi/Posts/Authorizer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/JsonApi/Posts/Validators.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/JsonApi/Posts/Validators.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/json-api-v1.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/json-api-v1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/Posts/CreatePostsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/Posts/CreatePostsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/PostPolicy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/Posts/UpdatePostsTests.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/Posts/UpdatePostsTests.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +150,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1jZQHuGO8kyivZ21dX3e6geiinM" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -163,25 +164,25 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="PHPUnit.UpdatePostsTests.guest_users_cannot_update_posts">
-    <configuration name="CreatePostsTest.guest_user_cannot_create_a_post" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Posts\CreatePostsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/CreatePostsTest.php" method="guest_user_cannot_create_a_post" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="CreatePostsTest.register_user_can_create_a_post" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Posts\CreatePostsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/CreatePostsTest.php" method="register_user_can_create_a_post" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="CreatePostsTest.slug_must_not_end_with_dashes" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Posts\CreatePostsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/CreatePostsTest.php" method="slug_must_not_end_with_dashes" scope="Method" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="PHPUnit.UpdatePostsTests.can_update_only_title">
     <configuration name="PaginatePostsTest.testExample" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\Posts\PaginatePostsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/PaginatePostsTest.php" method="testExample" scope="Method" />
       <method v="2" />
     </configuration>
+    <configuration name="UpdatePostsTests.can_update_only_title" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Posts\UpdatePostsTests" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/UpdatePostsTests.php" method="can_update_only_title" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="UpdatePostsTests.guest_users_cannot_update_posts" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\Posts\UpdatePostsTests" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/UpdatePostsTests.php" method="guest_users_cannot_update_posts" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UpdatePostsTests.registered_users_can_update_their_posts" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Posts\UpdatePostsTests" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/UpdatePostsTests.php" method="registered_users_can_update_their_posts" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UpdatePostsTests.registered_users_cannot_update_other_posts" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Posts\UpdatePostsTests" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/UpdatePostsTests.php" method="registered_users_cannot_update_other_posts" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -190,11 +191,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.UpdatePostsTests.can_update_only_title" />
+        <item itemvalue="PHPUnit.UpdatePostsTests.registered_users_cannot_update_other_posts" />
+        <item itemvalue="PHPUnit.UpdatePostsTests.registered_users_can_update_their_posts" />
         <item itemvalue="PHPUnit.UpdatePostsTests.guest_users_cannot_update_posts" />
         <item itemvalue="PHPUnit.PaginatePostsTest.testExample" />
-        <item itemvalue="PHPUnit.CreatePostsTest.register_user_can_create_a_post" />
-        <item itemvalue="PHPUnit.CreatePostsTest.guest_user_cannot_create_a_post" />
-        <item itemvalue="PHPUnit.CreatePostsTest.slug_must_not_end_with_dashes" />
       </list>
     </recent_temporary>
   </component>
@@ -209,6 +210,7 @@
       <workItem from="1604009052572" duration="19464000" />
       <workItem from="1604116610470" duration="266000" />
       <workItem from="1604116961110" duration="7433000" />
+      <workItem from="1604597772090" duration="10624000" />
     </task>
     <servers />
   </component>
@@ -233,26 +235,26 @@
       <screen x="0" y="23" width="1366" height="745" />
     </state>
     <state x="421" y="157" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1366.745@0.23.1366.745" timestamp="1604119245077" />
-    <state width="1872" height="356" key="GridCell.Tab.0.bottom" timestamp="1604517784235">
+    <state width="1872" height="213" key="GridCell.Tab.0.bottom" timestamp="1604609376593">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1366" height="253" key="GridCell.Tab.0.bottom/0.23.1366.745@0.23.1366.745" timestamp="1604121386860" />
-    <state width="1872" height="356" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604517784235" />
-    <state width="1872" height="356" key="GridCell.Tab.0.center" timestamp="1604517784235">
+    <state width="1872" height="213" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604609376593" />
+    <state width="1872" height="213" key="GridCell.Tab.0.center" timestamp="1604609376593">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1366" height="253" key="GridCell.Tab.0.center/0.23.1366.745@0.23.1366.745" timestamp="1604121386859" />
-    <state width="1872" height="356" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604517784235" />
-    <state width="1872" height="356" key="GridCell.Tab.0.left" timestamp="1604517784235">
+    <state width="1872" height="213" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604609376593" />
+    <state width="1872" height="213" key="GridCell.Tab.0.left" timestamp="1604609376593">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1366" height="253" key="GridCell.Tab.0.left/0.23.1366.745@0.23.1366.745" timestamp="1604121386858" />
-    <state width="1872" height="356" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604517784235" />
-    <state width="1872" height="356" key="GridCell.Tab.0.right" timestamp="1604517784235">
+    <state width="1872" height="213" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604609376593" />
+    <state width="1872" height="213" key="GridCell.Tab.0.right" timestamp="1604609376593">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1366" height="253" key="GridCell.Tab.0.right/0.23.1366.745@0.23.1366.745" timestamp="1604121386859" />
-    <state width="1872" height="356" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604517784235" />
+    <state width="1872" height="213" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604609376593" />
     <state width="1872" height="2" key="GridCell.Tab.1.bottom" timestamp="1604428809962">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -269,6 +271,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1872" height="2" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604428809962" />
+    <state x="2633" y="237" width="483" height="604" key="NewPhpClassDialog" timestamp="1604607640467">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2633" y="237" width="483" height="604" key="NewPhpClassDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604607640467" />
     <state x="192" y="34" key="SettingsEditor" timestamp="1604117158837">
       <screen x="0" y="23" width="1366" height="745" />
     </state>

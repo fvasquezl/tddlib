@@ -61,7 +61,7 @@ class Authorizer extends AbstractAuthorizer
     /**
      * Authorize a resource update request.
      *
-     * @param object $record
+     * @param object $post
      *      the domain record.
      * @param Request $request
      *      the inbound request.
@@ -69,9 +69,9 @@ class Authorizer extends AbstractAuthorizer
      * @throws AuthenticationException|AuthorizationException
      *      if the request is not authorized.
      */
-    public function update($record, $request)
+    public function update($post, $request)
     {
-        $this->authenticate();
+        $this->can('update',$post);
     }
 
     /**

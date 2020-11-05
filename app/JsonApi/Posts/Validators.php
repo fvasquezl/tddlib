@@ -45,7 +45,6 @@ class Validators extends AbstractValidators
      */
     protected function rules($record, array $data): array
     {
-
         return [
             'title' => ['required'],
             'slug' => [
@@ -55,7 +54,7 @@ class Validators extends AbstractValidators
                  Rule::unique('posts')->ignore($record)
             ],
             'excerpt' => ['required'],
-            'published_at' => ['required'],
+           // 'published_at' => ['required'],
             'categories' => [
                 Rule::requiredIf(! $record),
                 new HasOne('categories')
