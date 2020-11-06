@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="447ca9a9-08b2-4433-a631-58ff246f0ce3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Models/Traits/HasUuid.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/JsonApi/Posts/Authorizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/JsonApi/Posts/Authorizer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/JsonApi/Posts/Validators.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/JsonApi/Posts/Validators.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/PostPolicy.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/Posts/UpdatePostsTests.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/Posts/UpdatePostsTests.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/PostPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/PostPolicy.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,25 +159,25 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="PHPUnit.UpdatePostsTests.can_update_only_title">
-    <configuration name="PaginatePostsTest.testExample" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Posts\PaginatePostsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/PaginatePostsTest.php" method="testExample" scope="Method" />
+  <component name="RunManager" selected="PHPUnit.DeletePostsTest.authenticated_users_cannot_delete_other_posts">
+    <configuration name="DeletePostsTest.authenticated_users_can_delete_their_posts" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Posts\DeletePostsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/DeletePostsTest.php" method="authenticated_users_can_delete_their_posts" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="UpdatePostsTests.can_update_only_title" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Posts\UpdatePostsTests" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/UpdatePostsTests.php" method="can_update_only_title" scope="Method" />
+    <configuration name="DeletePostsTest.authenticated_users_cannot_delete_other_posts" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Posts\DeletePostsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/DeletePostsTest.php" method="authenticated_users_cannot_delete_other_posts" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="UpdatePostsTests.guest_users_cannot_update_posts" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Posts\UpdatePostsTests" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/UpdatePostsTests.php" method="guest_users_cannot_update_posts" scope="Method" />
+    <configuration name="DeletePostsTest.guest_users_cannot_delete_posts" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Posts\DeletePostsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/DeletePostsTest.php" method="guest_users_cannot_delete_posts" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="UpdatePostsTests.registered_users_can_update_their_posts" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Posts\UpdatePostsTests" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/UpdatePostsTests.php" method="registered_users_can_update_their_posts" scope="Method" />
+    <configuration name="UpdatePostsTests.can_update_only_excerpt" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Posts\UpdatePostsTests" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/UpdatePostsTests.php" method="can_update_only_excerpt" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="UpdatePostsTests.registered_users_cannot_update_other_posts" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Posts\UpdatePostsTests" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/UpdatePostsTests.php" method="registered_users_cannot_update_other_posts" scope="Method" />
+    <configuration name="UpdatePostsTests.can_update_only_slug" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Posts\UpdatePostsTests" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Posts/UpdatePostsTests.php" method="can_update_only_slug" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -191,11 +186,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.UpdatePostsTests.can_update_only_title" />
-        <item itemvalue="PHPUnit.UpdatePostsTests.registered_users_cannot_update_other_posts" />
-        <item itemvalue="PHPUnit.UpdatePostsTests.registered_users_can_update_their_posts" />
-        <item itemvalue="PHPUnit.UpdatePostsTests.guest_users_cannot_update_posts" />
-        <item itemvalue="PHPUnit.PaginatePostsTest.testExample" />
+        <item itemvalue="PHPUnit.DeletePostsTest.authenticated_users_cannot_delete_other_posts" />
+        <item itemvalue="PHPUnit.DeletePostsTest.authenticated_users_can_delete_their_posts" />
+        <item itemvalue="PHPUnit.DeletePostsTest.guest_users_cannot_delete_posts" />
+        <item itemvalue="PHPUnit.UpdatePostsTests.can_update_only_excerpt" />
+        <item itemvalue="PHPUnit.UpdatePostsTests.can_update_only_slug" />
       </list>
     </recent_temporary>
   </component>
@@ -211,6 +206,7 @@
       <workItem from="1604116610470" duration="266000" />
       <workItem from="1604116961110" duration="7433000" />
       <workItem from="1604597772090" duration="10624000" />
+      <workItem from="1604686160393" duration="758000" />
     </task>
     <servers />
   </component>
@@ -231,30 +227,31 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2020" y="100" width="1720" height="880" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604095001622" />
-    <state x="421" y="157" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604119245077">
-      <screen x="0" y="23" width="1366" height="745" />
+    <state x="2512" y="194" width="524" height="482" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604686410305">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="421" y="157" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1366.745@0.23.1366.745" timestamp="1604119245077" />
-    <state width="1872" height="213" key="GridCell.Tab.0.bottom" timestamp="1604609376593">
+    <state x="2512" y="194" width="524" height="482" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604686410305" />
+    <state width="1872" height="213" key="GridCell.Tab.0.bottom" timestamp="1604687174693">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1366" height="253" key="GridCell.Tab.0.bottom/0.23.1366.745@0.23.1366.745" timestamp="1604121386860" />
-    <state width="1872" height="213" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604609376593" />
-    <state width="1872" height="213" key="GridCell.Tab.0.center" timestamp="1604609376593">
+    <state width="1872" height="213" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604687174693" />
+    <state width="1872" height="213" key="GridCell.Tab.0.center" timestamp="1604687174692">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1366" height="253" key="GridCell.Tab.0.center/0.23.1366.745@0.23.1366.745" timestamp="1604121386859" />
-    <state width="1872" height="213" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604609376593" />
-    <state width="1872" height="213" key="GridCell.Tab.0.left" timestamp="1604609376593">
+    <state width="1872" height="213" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604687174692" />
+    <state width="1872" height="213" key="GridCell.Tab.0.left" timestamp="1604687174692">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1366" height="253" key="GridCell.Tab.0.left/0.23.1366.745@0.23.1366.745" timestamp="1604121386858" />
-    <state width="1872" height="213" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604609376593" />
-    <state width="1872" height="213" key="GridCell.Tab.0.right" timestamp="1604609376593">
+    <state width="1872" height="213" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604687174692" />
+    <state width="1872" height="213" key="GridCell.Tab.0.right" timestamp="1604687174693">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1366" height="253" key="GridCell.Tab.0.right/0.23.1366.745@0.23.1366.745" timestamp="1604121386859" />
-    <state width="1872" height="213" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604609376593" />
+    <state width="1872" height="213" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604687174693" />
     <state width="1872" height="2" key="GridCell.Tab.1.bottom" timestamp="1604428809962">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

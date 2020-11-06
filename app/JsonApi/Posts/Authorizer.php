@@ -77,7 +77,7 @@ class Authorizer extends AbstractAuthorizer
     /**
      * Authorize a resource read request.
      *
-     * @param object $record
+     * @param object $post
      *      the domain record.
      * @param Request $request
      *      the inbound request.
@@ -85,9 +85,9 @@ class Authorizer extends AbstractAuthorizer
      * @throws AuthenticationException|AuthorizationException
      *      if the request is not authorized.
      */
-    public function delete($record, $request)
+    public function delete($post, $request)
     {
-        // TODO: Implement delete() method.
+        $this->can('delete',$post);
     }
 
 }
